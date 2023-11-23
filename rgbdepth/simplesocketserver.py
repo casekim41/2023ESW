@@ -17,12 +17,11 @@ server_socket.listen()
 def threaded(client_socket, addr):
     print('>> Connected by :', addr[0], ':', addr[1])
 
-    # 클라이언트가 접속을 끊을 때 까지 반복합니다.
     while True:
 
         try:
 
-            # 데이터가 수신되면 클라이언트에 다시 전송합니다.(에코)
+            # 데이터가 수신되면 클라이언트에 다시 전송
             data = client_socket.recv(1024)
 
             if not data:
